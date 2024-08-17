@@ -54,6 +54,8 @@
 
 > can you break this sandbox?
 
+感谢 @LxxxSec 贡献的黑盒提取环境，文件位于Github Release
+
 ### bio_share
 
 > admin's bio is what u want, but admin will not share it to u.Login as test or test2, with the same password 123456a@b, Admin will visit this application using `www.test.com`
