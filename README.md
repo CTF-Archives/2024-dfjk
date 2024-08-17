@@ -54,7 +54,7 @@
 
 > can you break this sandbox?
 
-感谢 @LxxxSec 贡献的黑盒提取环境，文件位于Github Release
+感谢 [@LxxxSec](https://github.com/LxxxSec) 贡献的黑盒提取环境，文件位于Github Release
 
 ### bio_share
 
